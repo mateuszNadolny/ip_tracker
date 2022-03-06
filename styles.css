@@ -46,7 +46,7 @@
     flex-direction: column;
     gap: 1rem;
     font-size: 1.225rem;
-    padding-top: 2.5rem;
+    padding-top: 3.5rem;
 }
 
 .sidebar--user_info--label, .sidebar--signature, .sidebar--signature_link{
@@ -68,6 +68,7 @@
     font-size: 1.5rem;
     padding: .5rem 1rem;
     width: 40%;
+    max-width: 200px;
     border-radius: 18px;
     margin: 3rem
 }
@@ -85,6 +86,9 @@
 
 .sidebar--logo {
     width: 25%;
+    max-width: 100px;
+    position: absolute;
+    bottom: 3rem
 }
 
 .sidebar--signature {

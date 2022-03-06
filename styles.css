@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+:root {
+    --main-black: rgba(0, 0, 0, 1);
+    --main-white: rgba(255, 255, 255, 1);
+    --main-grey: rgba(146, 146, 146, 1);
+    --main-blue: rgba(0, 209, 255, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech', sans-serif;
+    text-decoration: none;
+    transition: all .1s ease-in-out;
+}
+
+/* ---> SIDEBAR <--- */
+.sidebar {
+    max-width: 100%;
+    max-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-black);
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar--close_btn {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 1rem;
+    top: 10px;
+}
+
+.sidebar--close_btn:active {
+    transform: scale(0.8);
+}
+
+.sidebar--user_info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.225rem;
+    padding-top: 2.5rem;
+}
+
+.sidebar--user_info--label, .sidebar--signature, .sidebar--signature_link{
+    color: var(--main-grey);
+}
+
+.sidebar--close_btn, .sidebar--user_info--desc {
+    color: var(--main-white);
+    margin-bottom: 1rem;
+}
+
+.sidebar--track_user_btn {
+    border: none;
+    background: linear-gradient(to right, var(--main-white) 50%, var(--main-black) 50%);
+    background-size: 200% 100%;
+    background-position:left bottom;
+    margin-left:10px;
+    transition:all .3s ease;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    width: 40%;
+    border-radius: 18px;
+    margin: 3rem
+}
+
+.sidebar--track_user_btn:hover {
+    background-position:right bottom;
+    color: var(--main-white);
+    border: 1px solid var(--main-white);
+    transform: scale(1.1);
+}
+
+.sidebar--track_user_btn:active {
+    transform: scale(0.9);
+}
+
+.sidebar--logo {
+    width: 25%;
+}
+
+.sidebar--signature {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 0.8rem;
+}
+
+.sidebar--signature_link:hover { 
+    color: var(--main-white);
+}
+
+
+
+
+

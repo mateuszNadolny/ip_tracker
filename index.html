@@ -6,9 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="modal.js"></script>
+    <script defer src="scripts/model.js"></script>
 </head>
 <body>
+
+    <!-- <section class="loading-section">
+        <img src="assets/logo.svg" alt="ip tracker logo">
+        <div class="spinner"></div>
+    </section> -->
+
+    <!-- SIDEBAR -->
+    <section class="sidebar">
+        <button class="sidebar--close_btn">X</button>
+        <div class="sidebar--user_info">
+            <p class="sidebar--user_info--label user-ip-label">YOUR IP</p>
+            <p class="sidebar--user_info--desc user-ip-desc">12.53.23.5432</p>
+            <p class="sidebar--user_info--label user-location-label">YOUR LOCATION</p>
+            <p class="sidebar--user_info--desc user-location-desc">WARSAW, PL</p>
+            <p class="sidebar--user_info--label user-cords-label">YOUR LAT/LON</p>
+            <p class="sidebar--user_info--desc user-cords-desc">52.1233 / 12.3454</p>
+            <p class="sidebar--user_info--label user-isp-label">YOUR ISP</p>
+            <p class="sidebar--user_info--desc user-isp-desc">SpaceX Starlink</p>
+        </div>
+        <button class="sidebar--track_user_btn">TRACK ME!</button>
+        <img class="sidebar--logo" src="assets/logo_white.svg" alt="ip-tracker-logo">
+        <p class="sidebar--signature">coded & designed by <a class="sidebar--signature_link" href="https://github.com/mateuszNadolny">mateuszNadolny</a></p>
+    </section>
+    
+    <main>
+        <section class="map-section">
+            <div class="searchbar"></div>
+            <div class="info-card"></div>
+        </section>
+    </main>
     
 </body>
 </html>

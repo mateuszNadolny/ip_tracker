@@ -1,0 +1,19 @@
+{
+  "name": "iptracker",
+  "version": "1.0.0",
+  "description": "ip tracking application",
+  "main": "model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateuszNadolny/ip_tracker.git"
+  },
+  "author": "mateuszNadolny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateuszNadolny/ip_tracker/issues"
+  },
+  "homepage": "https://github.com/mateuszNadolny/ip_tracker#readme"
+}

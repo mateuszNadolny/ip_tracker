@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts/model.js"></script>
+    <script defer src="scripts/controller.js"></script>
 </head>
 <body>
 
@@ -34,10 +34,32 @@
     </section>
     
     <main>
-        <section class="map-section">
-            <div class="searchbar"></div>
-            <div class="info-card"></div>
-        </section>
+        <div class="map">
+            <!-- SEARCHBAR -->
+            <div class="searchbar">
+                <button class="searchbar--sidebar_btn">⮜</button>
+                <div class="searchbar--search_user_input">
+                    <input type="text" class="searchbar--input_field" placeholder="ENTER IP ADRESS">
+                    <button class="searchbar--input_btn">GO</button>
+                </div>
+            </div>
+
+            <!-- INFO CARD -->
+            <div class="info-card">
+                <div class="info-card--ip_adress-wrapper">
+                    <p class="searched-label searched-ip-label">IP ADRESS</p>
+                    <p class="searched-ip_adress-info searched-info">12.4212.23.342.123</p>
+                </div>
+                <div class="info-card--other_info-wrapper">
+                    <p class="searched-label searched_time-label">CURRENT TIME</p>
+                    <p class="searched_time-info searched-info">21:37</p>
+                    <p class="searched-label searched-location-label">LOCATION</p>
+                    <p class="searched-location-info searched-info">OSLO, NO</p>
+                    <p class="searched-label searched-coords-label">LAT/LON</p>
+                    <p class="searched-coords-info searched-info">52.234 / 24.4323</p>
+                </div>
+            </div>
+        </div>
     </main>
     
 </body>

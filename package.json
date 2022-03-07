@@ -4,7 +4,8 @@
   "description": "ip tracking application",
   "main": "model.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mateuszNadolny/ip_tracker/issues"
   },
-  "homepage": "https://github.com/mateuszNadolny/ip_tracker#readme"
+  "homepage": "https://github.com/mateuszNadolny/ip_tracker#readme",
+  "dependencies": {
+    "leaflet": "^1.7.1"
+  }
 }

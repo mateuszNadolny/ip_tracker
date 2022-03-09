@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
     <script type="module" defer src="scripts/controller.js"></script>
+
 </head>
+
 <body>
 
     <!-- <section class="loading-section">
@@ -15,52 +24,66 @@
         <div class="spinner"></div>
     </section> -->
 
-    <!-- SIDEBAR -->
-    <section class="sidebar">
-        <button class="sidebar--close_btn">X</button>
-        <div class="sidebar--user_info">
-            <p class="sidebar--user_info--label user-ip-label">YOUR IP</p>
-            <p class="sidebar--user_info--desc user-ip-desc">12.53.23.5432</p>
-            <p class="sidebar--user_info--label user-location-label">YOUR LOCATION</p>
-            <p class="sidebar--user_info--desc user-location-desc">WARSAW, PL</p>
-            <p class="sidebar--user_info--label user-cords-label">YOUR LAT/LON</p>
-            <p class="sidebar--user_info--desc user-cords-desc">52.1233 / 12.3454</p>
-            <p class="sidebar--user_info--label user-isp-label">YOUR ISP</p>
-            <p class="sidebar--user_info--desc user-isp-desc">SpaceX Starlink</p>
-        </div>
-        <button class="sidebar--track_user_btn">TRACK ME!</button>
-        <img class="sidebar--logo" src="assets/logo_white.svg" alt="ip-tracker-logo">
-        <p class="sidebar--signature">coded & designed by <a class="sidebar--signature_link" href="https://github.com/mateuszNadolny">mateuszNadolny</a></p>
-    </section>
-    
     <main>
-        <div class="map">
-            <!-- SEARCHBAR -->
-            <div class="searchbar">
-                <button class="searchbar--sidebar_btn">⮜</button>
-                <div class="searchbar--search_user_input">
-                    <input type="text" class="searchbar--input_field" placeholder="ENTER IP ADRESS">
-                    <button class="searchbar--input_btn">GO</button>
-                </div>
+        <!-- SIDEBAR -->
+        <section class="sidebar">
+            <button class="sidebar--close_btn">X</button>
+            <div class="sidebar--user_info">
+                <p class="sidebar--user_info--label user-ip-label">YOUR IP</p>
+                <p class="sidebar--user_info--desc user-ip-desc">12.53.23.5432</p>
+                <p class="sidebar--user_info--label user-location-label">YOUR LOCATION</p>
+                <p class="sidebar--user_info--desc user-location-desc">WARSAW, PL</p>
+                <p class="sidebar--user_info--label user-cords-label">YOUR LAT/LON</p>
+                <p class="sidebar--user_info--desc user-cords-desc">52.12332343 / 12.345423434</p>
+                <p class="sidebar--user_info--label user-isp-label">YOUR ISP</p>
+                <p class="sidebar--user_info--desc user-isp-desc">SpaceX Starlink</p>
             </div>
+            <button class="sidebar--track_user_btn">TRACK ME!</button>
+            <img class="sidebar--logo" src="assets/logo_white.svg" alt="ip-tracker-logo">
+            <p class="sidebar--signature">coded & designed by <a class="sidebar--signature_link"
+                    href="https://github.com/mateuszNadolny">mateuszNadolny</a></p>
+        </section>
 
-            <!-- INFO CARD -->
-            <div class="info-card">
-                <div class="info-card--ip_adress-wrapper">
-                    <p class="searched-label searched-ip-label">IP ADRESS</p>
-                    <p class="searched-ip_adress-info searched-info">12.4212.23.342.123</p>
-                </div>
-                <div class="info-card--other_info-wrapper">
-                    <p class="searched-label searched_time-label">CURRENT TIME</p>
-                    <p class="searched_time-info searched-info">21:37</p>
-                    <p class="searched-label searched-location-label">LOCATION</p>
-                    <p class="searched-location-info searched-info">OSLO, NO</p>
-                    <p class="searched-label searched-coords-label">LAT/LON</p>
-                    <p class="searched-coords-info searched-info">52.234 / 24.4323</p>
-                </div>
+        <!-- SEARCHBAR -->
+        <div class="searchbar">
+            <button class="searchbar--sidebar_btn">⮜</button>
+            <div class="searchbar--search_user_input">
+                <input type="text" class="searchbar--input_field" placeholder="ENTER IP ADRESS">
+                <button class="searchbar--input_btn">GO</button>
             </div>
         </div>
+
+        <!-- INFO CARD -->
+        <div class="info-card">
+            <div class="info-card--ip_adress-wrapper">
+                <p class="searched-label searched-ip-label">IP ADRESS</p>
+                <p class="searched-ip_adress-info searched-info">12.4212.23.342.123</p>
+            </div>
+            <div class="info-card--other_info-wrapper">
+                <p class="searched-label searched_time-label">CURRENT TIME</p>
+                <p class="searched_time-info searched-info">21:37</p>
+                <p class="searched-label searched-location-label">LOCATION</p>
+                <p class="searched-location-info searched-info">OSLO, NO</p>
+                <p class="searched-label searched-coords-label">LAT/LON</p>
+                <p class="searched-coords-info searched-info">52.234 / 24.4323</p>
+            </div>
+            <button class="info-card--close_btn">x</button>
+        </div>
+
+        <section class="map-section">
+            <!-- MAP -->
+            <div id="map"></div>
+        </section>
     </main>
-    
+
 </body>
+
+<!-- 
+    LEAFLET THEME CONTRIBUTORS:
+   https://stadiamaps.com/ Stadia Maps
+   https://openmaptiles.org/ OpenMapTiles
+   "http://openstreetmap.org OpenStreetMap
+
+ -->
+
 </html>

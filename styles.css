@@ -133,6 +133,7 @@ main {
     justify-content: space-around;
     background-color: var(--main-black);
     width: 100%;
+    height: 35px;
     font-size: 1.5rem;
     padding: 8px 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -140,9 +141,12 @@ main {
 
 .searchbar--sidebar_btn {
     background: none;
-    border: none;
+    text-align: center;
+    border: 1px solid var(--main-white);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
     color: var(--main-white);
-    font-size: 1.5rem;
 }
 
 .searchbar--sidebar_btn:active {
@@ -174,68 +178,11 @@ main {
     transform: scale(.9);
 }
 
-/* ---> INFO CARD <--- */
-
-.info-card {
-    background-color: var(--main-white);
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    margin: 0 auto;
-    width: 92%;
-    max-width: 400px;
-    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 18px;
-    word-wrap: break-word;
-    padding: 1rem 0;
-    z-index: 2;
-}
-
-.info-card--ip_adress-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 1rem;
-}
-
-.searched-label {
-    font-size: .725rem;
-    color: var(--main-grey);
-}
-
-.searched-info {
-    font-size: 1.2rem;
-}
-
-.info-card--other_info-wrapper {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2, 1;
-}
-
-.info-card--other_info-wrapper .searched-label {
-    grid-row: 1 / 2;
-    align-self: end;
-}
-
-.info-card--close_btn {
-    background: none;
-    border: none;
-    color: var(--secondary-grey);
-    position: absolute;
-    top: .5rem;
-    right: 1rem;
-    font-size: 1.5rem;
-}
-
 /* ---> MAP SECTION <--- */
 .map-section {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 51px);
 }
 
 #map{
@@ -246,6 +193,19 @@ main {
     width: 100%;
     z-index: 1;
 }
+
+/* ---> LEAFLET STYLING <--- */
+.popup {
+    text-align: center;
+}
+.searched-popup-info {
+    font-size: 1rem;
+}
+
+.popup-span {
+    font-weight: bold;
+}
+
 
 @media screen and (max-height: 698px){
     .sidebar {
@@ -285,18 +245,14 @@ main {
         width: 200px;
     }
 
+    .map-section {
+        height: 100vh;
+    }
+
     #map{
         width: calc(100% - 200px);
         left: auto;
         right: 0;
-    }
-
-    .info-card {
-        transform: translate(0);
-        left: auto;
-        right: 2rem;
-        bottom: 2rem;
-        
     }
 }
 

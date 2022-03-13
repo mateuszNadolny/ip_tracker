@@ -234,7 +234,13 @@ main {
     }
 
     .sidebar--track_user_btn {
+        margin-top: 6rem;
         width: 160px;
+    }
+
+    .sidebar--logo {
+        width: 80px;
+        margin-bottom: 3rem;
     }
 
     .searchbar {

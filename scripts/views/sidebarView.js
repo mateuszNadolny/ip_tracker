@@ -40,6 +40,10 @@ class SidebarView {
         `
         return markup;
     }
+
+    addSidebarBtnHandler(handler) {
+        this._sidebarTrackMeBtn.addEventListener('click', handler);
+    }
 }
 
 export default new SidebarView();

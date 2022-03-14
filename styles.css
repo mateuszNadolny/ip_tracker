@@ -77,7 +77,7 @@ main {
     margin-bottom: 1rem;
 }
 
-.sidebar--track_user_btn {
+.sidebar--track_user_btn, .info-section--card_btn {
     border: none;
     background: linear-gradient(to right, var(--main-white) 50%, var(--main-black) 50%);
     background-size: 200% 100%;
@@ -92,14 +92,14 @@ main {
     margin: 3rem
 }
 
-.sidebar--track_user_btn:hover {
+.sidebar--track_user_btn:hover, .info-section--card_btn:hover {
     background-position: right bottom;
     color: var(--main-white);
     border: 1px solid var(--main-white);
     transform: scale(1.1);
 }
 
-.sidebar--track_user_btn:active {
+.sidebar--track_user_btn:active, .info-section--card_btn:active {
     transform: scale(0.9);
 }
 
@@ -176,6 +176,50 @@ main {
 
 .searchbar--input_btn:active {
     transform: scale(.9);
+}
+
+/* ---> INFO CARD <--- */
+.info-section {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    transition: 0.7s ease-in;
+}
+
+.info-section--card {
+    background-color: var(--main-white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 150px;
+    padding: 50px;
+    border-radius: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: 0.7s ease-in;
+}
+
+.infoSectionCard-active{
+    opacity: 100;
+}
+
+.info-section--card_btn {
+    border: 1px solid var(--main-black);
+    margin: 0;
+    width: 80%;
 }
 
 /* ---> MAP SECTION <--- */
@@ -261,4 +305,3 @@ main {
         right: 0;
     }
 }
-

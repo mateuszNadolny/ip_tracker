@@ -1,17 +1,26 @@
 class SearchbarView {
     constructor() {
         this._searchbar = document.querySelector('.searchbar--input_field');
+        this._queryBtn = document.querySelector('.searchbar--input_btn');
     }
 
     getQuery() {
-        let query = this._searchbar.value;
-        console.log(query);
+        let query = ''
+        if (this._searchbar.value === '') {
+            return
+        } else {
+            query = this._searchbar.value;
+        }
         this._clearField();
         return query;
     }
 
     _clearField() {
         this._searchbar.value = '';
+    }
+
+    addSearchbarHandler(handler) {
+        this._queryBtn.addEventListener('click', handler);
     }
 }
 

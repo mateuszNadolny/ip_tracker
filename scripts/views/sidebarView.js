@@ -17,11 +17,6 @@ class SidebarView {
         this._parentEl.insertAdjacentHTML('afterbegin', markup);
     }
 
-    updateData(data) {
-        this._data = data;
-        console.log(this._data)
-    }
-
     handleSidebarVisibility() {
         this._sidebarCloseBtn.addEventListener('click', this._toggleSidebar.bind(this));
         this._sidebarOpenBtn.addEventListener('click', this._toggleSidebar.bind(this));
@@ -48,7 +43,7 @@ class SidebarView {
             <p class="sidebar--user_info--desc user-ip-desc">${data.ip}</p>
             <p class="sidebar--user_info--label user-location-label">YOUR LOCATION</p>
             <p class="sidebar--user_info--desc user-location-desc">${data.locationCountry}, ${data.locationCity}</p>
-            <p class="sidebar--user_info--label user-cords-label">YOUR LAT/LON</p>
+            <p class="sidebar--user_info--label user-cords-label">YOUR LAT/LNG</p>
             <p class="sidebar--user_info--desc user-cords-desc">${data.lat} / ${data.lng}</p>
             <p class="sidebar--user_info--label user-isp-label">YOUR ISP</p>
             <p class="sidebar--user_info--desc user-isp-desc">${data.isp}</p>

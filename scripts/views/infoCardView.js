@@ -11,8 +11,7 @@ class InfoCardView {
         if (this._appearenceCounter === 0) {
             this._infoSection.style.opacity = '1';
             this._infoSectionCard.classList.add('infoSectionCard-active');
-            
-            localStorage.setItem('_appeareneceCounter', JSON.stringify(this._appearenceCounter));        
+                   
         } else {
             this._infoSection.style.opacity = '0';
             this._infoSection.style.display = 'none';
@@ -22,7 +21,13 @@ class InfoCardView {
 
     _hideInfoSection() {
         this._infoSection.style.opacity = '0';
+        setTimeout(this._removeInfoSection.bind(this), 300)
         this._appearenceCounter++;
+        localStorage.setItem('_appeareneceCounter', JSON.stringify(this._appearenceCounter)); 
+    }
+
+    _removeInfoSection() {
+        this._infoSection.style.display = 'none';
     }
 
     _addHandlerBtnHideSection() {

@@ -6,12 +6,6 @@ import {
     AJAX
 } from "./helpers.js";
 
-
-export const state = {
-    IPInfo: {},
-    query: ''
-}
-
 const createIPInfoObject = async function (data) {
     const IPInfo = {
         ip: data.ip,
@@ -19,7 +13,8 @@ const createIPInfoObject = async function (data) {
         locationCity: data.location.city,
         lat: data.location.lat,
         lng: data.location.lng,
-        isp: data.isp
+        isp: data.isp,
+        isUserIP: true
     }
     return IPInfo;
 }
@@ -36,6 +31,7 @@ export const loadQueryIp = async function () {
         const url = createQueryUrl();
         const data = await AJAX(url)
         const queryIP = createIPInfoObject(data);
+        console.log(queryIP)
         return queryIP;
     } catch (err) {
         console.error(err.message)
@@ -53,8 +49,4 @@ export const loadUserIp = async function() {
         console.error(err.message);
         throw(err);
     }    
-}
-
-const addSearchbarHandler = function () {
-    const btn = document.querySelector('.searchbar--input_btn');
 }

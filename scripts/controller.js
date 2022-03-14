@@ -4,14 +4,23 @@ import SearchbarView from "./views/searchbarView.js";
 import InfoCardView from "./views/infoCardView.js";
 import * as model from "./model.js"
 
+const controlSidebar = async function() {
+    SidebarView.renderSpinner();
+    
+    const data = await model.loadUserIp()
+    SidebarView.renderSidebar(data);
+    SidebarView.handleSidebarVisibility();
+    SidebarView.addSidebarBtnHandler(model.loadUserIp);
+}
+
 
 const init = function () {
+    controlSidebar();
     InfoCardView.renderInfoCard();
-    SidebarView.handleSidebarVisibility();
-    SidebarView.renderSidebar();
-    SidebarView.addSidebarBtnHandler(model.loadUserIp);
     MapView.renderMap();
     SearchbarView.addSearchbarHandler(model.loadQueryIp);
 }
+
+
 
 init();

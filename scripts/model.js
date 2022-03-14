@@ -6,12 +6,22 @@ import {
     AJAX
 } from "./helpers.js";
 
-const createIPInfoObject = function (data) {
+
+export const state = {
+    IPInfo: {},
+    query: ''
+}
+
+const createIPInfoObject = async function (data) {
     const IPInfo = {
         ip: data.ip,
-        
-
+        locationCountry: data.location.country,
+        locationCity: data.location.city,
+        lat: data.location.lat,
+        lng: data.location.lng,
+        isp: data.isp
     }
+    return IPInfo;
 }
 
 export const createQueryUrl = function () {
@@ -24,9 +34,9 @@ export const createQueryUrl = function () {
 export const loadQueryIp = async function () {
     try {
         const url = createQueryUrl();
-        console.log(url);
         const data = await AJAX(url)
-        console.log(data);
+        const queryIP = createIPInfoObject(data);
+        return queryIP;
     } catch (err) {
         console.error(err.message)
         alert('Invalid IP adress. Please try again')
@@ -37,8 +47,8 @@ export const loadQueryIp = async function () {
 export const loadUserIp = async function() {
     try {
         const data = await AJAX(API_URL)
-        console.log(data);
-        return data;
+        const userIP = await createIPInfoObject(data);
+        return userIP;
     } catch(err) {
         console.error(err.message);
         throw(err);

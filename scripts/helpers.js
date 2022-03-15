@@ -12,11 +12,15 @@ const timeout = function (s) {
     try {
       const headers = {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': 'https://mateusznadolny.github.io/ip_tracker/',
+        'Access-Control-Request-Method': 'PUT, GET, POST',
+        'Access-Control-Request-Headers': 'Content-Type'
       }
+      
       const fetchPro = uploadData
         ? fetch(url, {
             method: 'POST',
+            mode: "no-cors",
             headers,
             body: JSON.stringify(uploadData),
           })

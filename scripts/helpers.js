@@ -15,6 +15,7 @@ const timeout = function (s) {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(uploadData),
           })

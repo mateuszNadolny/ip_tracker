@@ -12,6 +12,7 @@ const queryData = await model.loadQueryIp();
 
 MapView.getUserData(userData);
 MapView.renderMap();
+MapView.test();
 
 
 SidebarView.renderSpinner();

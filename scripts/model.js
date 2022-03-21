@@ -8,11 +8,11 @@ import {
 
 const createIPInfoObject = async function (data) {
     const IPInfo = {
-        ip: data.ip,
-        locationCountry: data.location.country,
-        locationCity: data.location.city,
-        lat: data.location.lat,
-        lng: data.location.lng,
+        ip: data.query,
+        locationCountry: data.country,
+        locationCity: data.city,
+        lat: data.lat,
+        lng: data.lon,
         isp: data.isp,
         isUserIP: true
     }
@@ -21,8 +21,7 @@ const createIPInfoObject = async function (data) {
 
 export const createQueryUrl = function () {
     const queryIP = SearchbarView.getQuery();
-    const url = `${API_URL}=${queryIP}`;
-    console.log(url);
+    const url = `${API_URL}/${queryIP}`;
     return url;
 }
 
@@ -31,7 +30,6 @@ export const loadQueryIp = async function () {
         const url = createQueryUrl();
         const data = await AJAX(url)
         const queryIP = createIPInfoObject(data);
-        console.log(queryIP)
         return queryIP;
     } catch (err) {
         console.error(err.message)

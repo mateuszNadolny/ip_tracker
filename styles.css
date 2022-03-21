@@ -14,7 +14,13 @@
     font-family: 'Share Tech', sans-serif;
     text-decoration: none;   
     overflow-wrap: anywhere;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+     /* Hide scrollbar for Chrome, Safari and Opera */
+} 
 
+*::-webkit-scrollbar {
+    display: none;
 }
 
 main {
@@ -39,6 +45,8 @@ main {
     top: 0;
     left: 0;
     transition: all .3s ease-in-out;
+    overflow: scroll;
+
 }
 
 .sidebar-visible{
@@ -89,7 +97,7 @@ main {
     width: 40%;
     max-width: 200px;
     border-radius: 18px;
-    margin: 3rem
+    margin: 3rem 0;
 }
 
 .sidebar--track_user_btn:hover, .info-section--card_btn:hover {
@@ -106,18 +114,13 @@ main {
 .sidebar--logo {
     width: 25%;
     max-width: 100px;
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
 }
 
 .sidebar--signature {
-    position: absolute;
-    bottom: 1rem;
-    font-size: 0.8rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 2rem;
+    margin: 2rem auto;
+    width: 80%;
 }
 
 .sidebar--signature_link:hover {
@@ -212,7 +215,7 @@ main {
 }
 
 .infoSectionCard-active{
-    opacity: 100;
+    opacity: 1;
 }
 
 .info-section--card_btn {
@@ -269,11 +272,7 @@ main {
 }
 
 
-@media screen and (max-height: 698px){
-    .sidebar {
-        overflow: scroll;
-    }
-
+@media screen and (max-height: 600px){
     .sidebar--logo, .sidebar--signature {
         position: initial;
         transform: translate(0);

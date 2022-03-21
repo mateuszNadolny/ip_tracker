@@ -7,7 +7,7 @@ class SearchbarView {
     getQuery() {
         let query = ''
         if (this._searchbar.value === '') {
-            return
+            query = ''
         } else {
             query = this._searchbar.value;
         }

@@ -15,7 +15,6 @@ class InfoCardView {
         } else {
             this._infoSection.style.opacity = '0';
             this._infoSection.style.display = 'none';
-            return;
         }
     }
 
@@ -36,10 +35,9 @@ class InfoCardView {
 
 
     renderInfoCard() {
-        window.addEventListener('DOMContentLoaded', (event) => {
-            this._render();
-            this._addHandlerBtnHideSection();
-        })
+        this._render();
+        this._addHandlerBtnHideSection();
+        
     }
 }
 

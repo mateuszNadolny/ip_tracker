@@ -8,6 +8,7 @@ class MapView {
     getUserData(userData) {
         this._userData = userData;
         this._userCoords = [this._userData.lat, this._userData.lng];
+        console.log('user data is acquired')
     }
 
     renderMap() {
@@ -46,8 +47,14 @@ class MapView {
     }
 
     setViewToUserLocation() {
-        console.log(this._map);
+        console.log(this._userCoords);
+        console.log(this._userData);
         this._map.setView(this._userCoords);
+    }
+
+    test() {
+        console.log(this._userCoords);
+        console.log(this._userData);
     }
 
 }

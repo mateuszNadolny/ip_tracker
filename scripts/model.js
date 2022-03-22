@@ -20,7 +20,7 @@ const createIPInfoObject = async function (data) {
 
 export const createQueryUrl = function () {
     const queryIP = SearchbarView.getQuery();
-    const url = `${API_URL}/${queryIP}`;
+    const url = `${API_URL}=${queryIP}`;
     return url;
 }
 

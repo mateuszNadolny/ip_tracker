@@ -8,11 +8,11 @@ import {
 
 const createIPInfoObject = async function (data) {
     const IPInfo = {
-        ip: data.query,
-        locationCountry: data.country,
-        locationCity: data.city,
-        lat: data.lat,
-        lng: data.lon,
+        ip: data.ip,
+        locationCountry: data.location.country,
+        locationCity: data.location.city,
+        lat: data.location.lat,
+        lng: data.location.lng,
         isp: data.isp,
     }
     return IPInfo;

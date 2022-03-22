@@ -4,7 +4,7 @@ IP tracker is an responsive app that can trace location user location and displa
 
 ## Live Demo
 
-[Check demo here]()
+[Check demo here](https://mateusznadolny.github.io/ip_tracker/)
 
 ### IMPORTANT
 This app may not work if you're using AdBlock, VPN, or any other browser that can recognize API request as a tracking script (ex. Brave). 

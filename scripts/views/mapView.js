@@ -11,16 +11,10 @@ class MapView {
         this._userCoords = [this._userData.lat, this._userData.lng];
         }
     
-    // getQueryData(queryData) {
-    //     this._queryData = queryData;
-    //     console.log(this._queryData);
-    // }
-
     renderMap() {
         this._map = L.map('map').setView(this._userCoords, 13);
-        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
-            maxZoom: 20,
-            attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(this._map);
 
         this._renderUserMarker(this._userCoords);

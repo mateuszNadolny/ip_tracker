@@ -30,7 +30,7 @@ The app was made according to assumptions of **MVC** architecture. Whole thing w
 
 The API's that are used by this app are:
 - [Leaflet](https://leafletjs.com/)
-- [FreeGeoIpAPI](https://freegeoip.app/)
+- [IP Geolocation API](https://geo.ipify.org//)
 
 ## Author
 [mateuszNadolny](https://github.com/mateuszNadolny)

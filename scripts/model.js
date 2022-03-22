@@ -14,7 +14,6 @@ const createIPInfoObject = async function (data) {
         lat: data.lat,
         lng: data.lon,
         isp: data.isp,
-        isUserIP: true
     }
     return IPInfo;
 }
@@ -29,6 +28,7 @@ export const loadQueryIp = async function () {
     try {
         const url = createQueryUrl();
         const data = await AJAX(url)
+        if (!data.isp) throw new Error(`${data.message}`);
         const queryIP = createIPInfoObject(data);
         return queryIP;
     } catch (err) {

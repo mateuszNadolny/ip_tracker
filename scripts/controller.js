@@ -4,21 +4,27 @@ import InfoCardView from "./views/infoCardView.js";
 import * as model from "./model.js"
 import MapView from "./views/mapView.js"
 
-
+// CONTROLL INFO CARD
 InfoCardView.renderInfoCard();
 
 const userData = await model.loadUserIp();
-const queryData = await model.loadQueryIp();
 
+// CONTROLL SEARCHBAR
+SearchbarView.addSearchbarHandler(async function() {
+    const queryData = await model.loadQueryIp();
+    // MapView.getQueryData(queryData);
+    MapView.renderQueryMarker(queryData);
+});
+
+// CONTROLL MAP
 MapView.getUserData(userData);
 MapView.renderMap();
-MapView.test();
 
-
+// CONTROL SIDEBAR
 SidebarView.renderSpinner();
 SidebarView.renderSidebar(userData);
 SidebarView.handleSidebarVisibility();
-SidebarView.addSidebarBtnHandler(MapView.setViewToUserLocation);
+SidebarView.addSidebarBtnHandler(() => {
+    MapView.setViewToUserLocation(userData)
+});
 
-
-SearchbarView.addSearchbarHandler(model.loadQueryIp);

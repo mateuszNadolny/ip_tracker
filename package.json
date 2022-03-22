@@ -2,8 +2,6 @@
   "name": "iptracker",
   "version": "1.0.0",
   "description": "ip tracking application",
-  "main": "model.js",
-  "type": "module",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
@@ -20,5 +18,8 @@
   "homepage": "https://github.com/mateuszNadolny/ip_tracker#readme",
   "dependencies": {
     "leaflet": "^1.7.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-rc.0"
   }
 }
